@@ -1,1 +1,1 @@
-# tf2-particle-stringtable-expander
+# tf2-stringtable-expander
