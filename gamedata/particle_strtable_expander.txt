@@ -1,0 +1,68 @@
+"Games"
+{
+    "#default"
+    {
+        "#supported"
+        {
+            "engine"    "tf2"
+        }
+
+        "Signatures"
+        {
+            // Str: "Only %i string tables allowed, can't create'%s'"
+            // CNetworkStringTable *__cdecl CNetworkStringTableContainer::CreateStringTableEx
+            // (
+            //     CNetworkStringTableContainer *this,
+            //     char *s, // tablename?
+            //     int a3,  // maxentries?
+            //     int a4,  // userdatafixedsize?
+            //     int a5,  // userdatanetworkbits?
+            //     bool a6  // flags?
+            // )
+            "CNetworkStringTableContainer::CreateStringTable"
+            {
+                "library"       "engine"
+                // Signature for sub_101B2920:
+                // 55 8B EC 56 8B F1 80 7E 04 00
+                "windows"       "\x55\x8B\xEC\x56\x8B\xF1\x80\x7E\x04\x00"
+                "linux"         "@_ZN28CNetworkStringTableContainer19CreateStringTableExEPKciiib"
+            }
+        }
+
+        "Functions"
+        {
+            "CNetworkStringTableContainer::CreateStringTable"
+            {
+                "signature"     "CNetworkStringTableContainer::CreateStringTable"
+                "callconv"      "thiscall"
+                "this"          "address"
+                "return"        "int"
+                "arguments"
+                {
+                    // char*??
+                    "tableName"
+                    {
+                        "type"  "object"
+                        "size"  "4"
+                    }
+                    "maxentries"
+                    {
+                        "type"  "int"
+                    }
+                    "userdatafixedsize"
+                    {
+                        "type"  "int"
+                    }
+                    "userdatanetworkbits"
+                    {
+                        "type"  "int"
+                    }
+                    "flags"
+                    {
+                        "type"  "int"
+                    }
+                }
+            }
+        }
+    }
+}
