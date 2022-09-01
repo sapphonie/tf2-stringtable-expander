@@ -3,7 +3,7 @@
 
 #include <dhooks>
 
-#define MULTIPLIER 6.0
+#define MULTIPLIER 8.0
 
 DynamicDetour g_hDHook_CreateStringTable;
 
