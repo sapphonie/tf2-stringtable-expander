@@ -3,7 +3,7 @@
 
 #include <dhooks>
 
-#define MULTIPLIER 4.0
+#define MULTIPLIER 6.0
 
 DynamicDetour g_hDHook_CreateStringTable;
 
@@ -42,7 +42,7 @@ public MRESReturn DHookCallback_CreateStringTable(Address pThis, DHookReturn hRe
 	hParams.GetObjectVarString(1, 0, ObjectValueType_String, tableName, sizeof(tableName));
 	int maxentries = hParams.Get(2);
 
-	LogMessage("DHookCallback_CreateStringTable: tableName=\"%s\" maxentries=%d userdatafixedsize=%d userdatanetworkbits=%d flags=%d", tableName, maxentries, hParams.Get(3), hParams.Get(4), hParams.Get(5));
+	LogMessage("DHookCallback_CreateStringTable: -> \n\n\n\n\n\ntableName=\"%s\" maxentries=%d userdatafixedsize=%d userdatanetworkbits=%d flags=%d", tableName, maxentries, hParams.Get(3), hParams.Get(4), hParams.Get(5));
 
 	if (MULTIPLIER != 1.0 && StrEqual(tableName, "ParticleEffectNames")) {
 		int _maxentries = RoundToFloor(MULTIPLIER * maxentries);
